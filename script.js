@@ -59,10 +59,44 @@ function generatePassword() {
     passwordArray.push(availChars[createRandom(availChars.length)])
   }
 
+  passwordArray = replaceCharacters(userOptions, passwordArray)
+
   return passwordArray.join("")
 
-
+//  Create an object instead of an array of all options; if object.lcletters then do this
 }
+
+function replaceCharacters (userOptions, passwordArray) {
+  for(var i = 0; i < 4; i++) {
+    if (passwordArray.some(r=> numbers.includes(r))) {
+    
+    }  else if (userOptions.numberChoice) {
+        passwordArray.splice(0, 1, "3")
+    }
+    
+    if (passwordArray.some(r=> lcLetters.includes(r))) {
+    
+    }  else if (userOptions.lcLetterChoice) {
+        passwordArray.splice(1, 1, "j")
+    }
+
+    if (passwordArray.some(r=> ucLetters.includes(r))) {
+      
+    }  else if (userOptions.ucLetterChoice) {
+        passwordArray.splice(2, 1, "U")
+    }
+
+    if (passwordArray.some(r=> specialCharacters.includes(r))) {
+      
+    }  else if (userOptions.specialCharacterChoice) {
+        passwordArray.splice(3, 1, "%")
+    }
+  }
+  return passwordArray
+}
+
+
+
 
 // Write password to the #password input
 var generateBtn = document.querySelector("#generate");
