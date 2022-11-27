@@ -11,7 +11,7 @@ https://github.com/nickrosales/Random-Password
 
 ## Screenshot
 
-![screenshot of completed page](images/Screenshot1.PNG)
+![screenshot of completed page](Images/Screenshot1.PNG)
 
 ## License
 
