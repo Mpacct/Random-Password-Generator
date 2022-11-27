@@ -71,25 +71,25 @@ function replaceCharacters (userOptions, passwordArray) {
     if (passwordArray.some(r=> numbers.includes(r))) {
     
     }  else if (userOptions.numberChoice) {
-        passwordArray.splice(0, 1, "3")
+        passwordArray.splice(0, 1, numbers[createRandom(numbers.length)])
     }
     
     if (passwordArray.some(r=> lcLetters.includes(r))) {
     
     }  else if (userOptions.lcLetterChoice) {
-        passwordArray.splice(1, 1, "j")
+        passwordArray.splice(1, 1, lcLetters[createRandom(lcLetters.length)])
     }
 
     if (passwordArray.some(r=> ucLetters.includes(r))) {
       
     }  else if (userOptions.ucLetterChoice) {
-        passwordArray.splice(2, 1, "U")
+        passwordArray.splice(2, 1, ucLetters[createRandom(ucLetters.length)])
     }
 
     if (passwordArray.some(r=> specialCharacters.includes(r))) {
       
     }  else if (userOptions.specialCharacterChoice) {
-        passwordArray.splice(3, 1, "%")
+        passwordArray.splice(3, 1, specialCharacters[createRandom(specialCharacters.length)])
     }
   }
   return passwordArray
